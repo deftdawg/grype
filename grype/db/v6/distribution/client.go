@@ -28,8 +28,7 @@ type Config struct {
 	CACert    string
 
 	// validations
-	ValidateByHashOnGet bool
-	RequireUpdateCheck  bool
+	RequireUpdateCheck bool
 
 	// timeouts
 	CheckTimeout  time.Duration
@@ -50,11 +49,10 @@ type client struct {
 
 func DefaultConfig() Config {
 	return Config{
-		LatestURL:           "https://grype.anchore.io/databases/latest.json",
-		ValidateByHashOnGet: true,
-		RequireUpdateCheck:  false,
-		CheckTimeout:        30 * time.Second,
-		UpdateTimeout:       300 * time.Second,
+		LatestURL:          "https://grype.anchore.io/databases/latest.json",
+		RequireUpdateCheck: false,
+		CheckTimeout:       30 * time.Second,
+		UpdateTimeout:      300 * time.Second,
 	}
 }
 
